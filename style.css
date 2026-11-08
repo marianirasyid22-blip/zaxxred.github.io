@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #080808;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.background-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: #d00000;
+    filter: blur(180px);
+    opacity: 0.13;
+    top: 15%;
+    right: -250px;
+    z-index: -1;
+}
+
+.navbar {
+    width: 100%;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 27px;
+    font-weight: 900;
+    color: white;
+    text-decoration: none;
+}
+
+.logo span,
+footer h2 span {
+    color: #ff1515;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+}
+
+.nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 13px;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: #ff2222;
+}
+
+.nav-button {
+    color: white;
+    text-decoration: none;
+    border: 1px solid #ff2222;
+    padding: 11px 25px;
+    border-radius: 5px;
+    font-size: 12px;
+    transition: .3s;
+}
+
+.nav-button:hover {
+    background: #ff1515;
+    box-shadow: 0 0 25px #ff1515;
+}
+
+.hero {
+    min-height: 100vh;
+    padding: 130px 10% 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.small-title,
+.section-label {
+    color: #ff2929;
+    letter-spacing: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.15;
+    font-weight: 900;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: #ff1717;
+    text-shadow: 0 0 30px #ff171766;
+}
+
+.description {
+    color: #999;
+    line-height: 1.9;
+    font-size: 14px;
+    max-width: 460px;
+    margin: 25px 0 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 14px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.primary-button {
+    background: #e60000;
+    color: white;
+    box-shadow: 0 8px 25px #e6000040;
+}
+
+.primary-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px #e6000080;
+}
+
+.secondary-button {
+    color: white;
+    border: 1px solid #444;
+}
+
+.secondary-button:hover {
+    border-color: #ff2222;
+    color: #ff2222;
+}
+
+.hero-visual {
+    width: 350px;
+    height: 350px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 900px;
+}
+
+.red-ring {
+    position: absolute;
+    border: 1px solid #ff202080;
+    border-radius: 50%;
+    transform: rotateX(65deg);
+}
+
+.ring-one {
+    width: 330px;
+    height: 330px;
+    animation: spin 10s linear infinite;
+}
+
+.ring-two {
+    width: 260px;
+    height: 260px;
+    border-color: #ff202040;
+    animation: spin 7s linear infinite reverse;
+}
+
+.cube {
+    width: 130px;
+    height: 130px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 9s linear infinite;
+}
+
+.cube-face {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    background: linear-gradient(135deg, #ff1717, #450000);
+    border: 2px solid #ff5555;
+    box-shadow: inset 0 0 30px #ff000066,
+        0 0 30px #ff000044;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 65px;
+    font-weight: 900;
+    color: white;
+}
+
+.front {
+    transform: translateZ(65px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(65px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(65px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(65px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(65px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(65px);
+}
+
+.visual-label {
+    position: absolute;
+    bottom: -25px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 11px;
+    color: #ff3333;
+    letter-spacing: 5px;
+}
+
+.section {
+    padding: 110px 10%;
+}
+
+.section h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(30px, 5vw, 48px);
+    margin-bottom: 45px;
+}
+
+.section h2 span {
+    color: #ff2020;
+}
+
+.about-card {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    padding: 40px;
+    background: linear-gradient(135deg, #191919, #0c0c0c);
+    border: 1px solid #292929;
+    border-left: 4px solid #ff1717;
+    border-radius: 12px;
+    transform: perspective(1000px) rotateY(-3deg);
+    transition: .4s;
+}
+
+.about-card:hover {
+    transform: perspective(1000px) rotateY(0deg) translateY(-7px);
+    box-shadow: 0 20px 50px #ff000020;
+}
+
+.about-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 75px;
+    color: #ff1717;
+    text-shadow: 0 0 25px #ff171766;
+}
+
+.about-card h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    color: #999;
+    line-height: 1.9;
+    font-size: 13px;
+}
+
+.profile {
+    background: #0d0d0d;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.profile-card {
+    padding: 30px;
+    min-height: 135px;
+    background: linear-gradient(145deg, #1c1c1c, #101010);
+    border: 1px solid #303030;
+    border-radius: 10px;
+    transition: .35s;
+    transform-style: preserve-3d;
+}
+
+.profile-card:hover {
+    transform: perspective(700px) rotateX(5deg) rotateY(-5deg) translateY(-7px);
+    border-color: #ff2222;
+    box-shadow: 0 15px 35px #ff000020;
+}
+
+.profile-card p {
+    color: #ff3333;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.profile-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    padding: 65px 20px;
+    background: #070707;
+    border-top: 1px solid #252525;
+}
+
+footer h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+footer p {
+    color: #888;
+    font-size: 12px;
+}
+
+.copyright {
+    margin-top: 25px;
+    color: #555;
+}
+
+@keyframes rotateCube {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotateX(65deg) rotateZ(0deg);
+    }
+
+    to {
+        transform: rotateX(65deg) rotateZ(360deg);
+    }
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        padding: 20px 6%;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding-top: 150px;
+    }
+
+    .description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        transform: scale(.85);
+    }
+
+    .about-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+}
